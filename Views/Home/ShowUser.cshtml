@@ -1,0 +1,48 @@
+@model userDash2.Models.Wrapper
+
+<h3>@ViewBag.thisUser.FirstName @ViewBag.thisUser.LastName</h3>
+
+<p>Registered on: @ViewBag.thisUser.Created_At.ToString("D")</p>
+<li>User ID: @ViewBag.thisUser.UserId</li>
+<li>Email address: @ViewBag.thisUser.Email</li>
+
+@if(ViewBag.thisUser.UserId != ViewBag.currentUser.UserId)
+{
+    <h4>Leave a message for @ViewBag.thisUser.FirstName</h4>
+    <form action="/users/@ViewBag.thisUser.UserId/messages/new" method="POST">
+        <textarea rows="4" cols="50" name="content" placeholder="What do you want to say?"></textarea><br><br>
+        <input type="submit" value="Post message">
+    </form>
+}
+
+@if (Model != null)
+{
+    @foreach(var message in Model.Messages)
+    {
+        <p>@message.Creator.FirstName wrote:</p>
+        <p>@message.Content</p>
+        @if(@message.UserId != ViewBag.currentUser.UserId)
+        {
+            <form action="/messages/@message.MessageId/comments/new" method="POST">
+                <textarea name="content" rows="4" cols="50" placeholder="Respond to @message.Creator.FirstName"></textarea><br><br>
+                <input type="submit" value="Post comment">
+            </form>
+        }
+        @foreach(var comment in message.Comments)
+        {
+            <p>@comment.User.FirstName wrote:</p>
+            <p>@comment.Content</p>
+        }
+    }
+}
+
+<hr>
+
+@if(ViewBag.currentUser.UserLevel == "admin")
+{
+    <p><a href="/dashboard/admin">Dashboard</a> | <a href="/logout">Log off</a></p>
+}
+else 
+{
+    <p><a href="/dashboard/user">Dashboard</a> | <a href="/users/@ViewBag.currentUser.UserId/edit">Edit Profile</a> | <a href="/logout">Log off</a></p>
+} 

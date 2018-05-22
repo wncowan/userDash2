@@ -1,0 +1,25 @@
+@model userDash2.Models.User
+
+<h2>Edit your user information:</h2>
+
+<form action="/users/@ViewBag.thisUser.UserId/update" method="POST">
+    <label for="FirstName">First Name: </label>
+    <input asp-for="FirstName" name="FirstName" type="text" value=@ViewBag.thisUser.FirstName><br>
+    <span asp-validation-for="FirstName"></span><br>
+
+    <label for="LastName">Last Name: </label>
+    <input asp-for="LastName" name="LastName" type="text" value=@ViewBag.thisUser.LastName><br>
+    <span asp-validation-for="LastName"></span><br>
+
+    <label for="Email">Email: </label>
+    <input asp-for="Email" name="Email" type="email" value=@ViewBag.thisUser.Email><br>
+    <span asp-validation-for="Email"></span><br>
+
+    <label for="Password">Password: </label>
+    <input asp-for="Password" name="Password" type="password"><br>
+    <span asp-validation-for="Password"></span><br>
+        
+    <button type="submit">Update Information</button>
+</form>
+<hr>
+<p><a href="/users/show/@ViewBag.currentUser.UserId">Profile</a> | <a href="/dashboard/user">Dashboard</a> | <a href="/logout">Log off</a></p>

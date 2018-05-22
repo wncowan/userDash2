@@ -1,0 +1,46 @@
+@model userDash2.Models.CreateUserVM
+
+<h2>Add a new user:</h2>
+
+<form action="/users/create" method="POST">
+    <label for="FirstName">First Name: </label>
+    <input asp-for="FirstName" name="FirstName" type="text" placeholder="Enter first name"><br>
+    <span asp-validation-for="FirstName"></span><br>
+
+    <label for="LastName">Last Name: </label>
+    <input asp-for="LastName" name="LastName" type="text" placeholder="Enter last name"><br>
+    <span asp-validation-for="LastName"></span><br>
+
+    <label for="Email">Email: </label>
+    <input asp-for="Email" name="Email" type="email" placeholder="Enter email"><br>
+    <span asp-validation-for="Email"></span><br>
+
+    <label for="Password">Password: </label>
+    <input asp-for="Password" name="Password" type="password"><br>
+    <span asp-validation-for="Password"></span><br>
+    
+    <label for="ConfirmPassword">Confirm Password: </label>
+    <input asp-for="ConfirmPassword" name="ConfirmPassword" type="password"><br>
+    <span asp-validation-for="ConfirmPassword"></span><br>
+
+    <label for="UserLevel">User Level</label>
+    <select asp-for="UserLevel" name="userLevel">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select><br><br>
+    <span asp-validation-for="UserLevel"></span>
+        
+    <button type="submit">Create User</button>
+</form>
+<hr>
+<p>
+    @if(ViewBag.currentUser.UserLevel == "admin")
+    {
+        <a href="/dashboard/admin">Dashboard</a>
+    }
+    else 
+    {
+        <a href="/dashboard/user">Dashboard</a>
+    } 
+     | <a href="/logout">Log off</a>
+</p>

@@ -1,0 +1,11 @@
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/bin/Debug/netcoreapp2.0/userDash2.deps.json
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/bin/Debug/netcoreapp2.0/userDash2.runtimeconfig.json
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/bin/Debug/netcoreapp2.0/userDash2.runtimeconfig.dev.json
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/bin/Debug/netcoreapp2.0/userDash2.dll
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/bin/Debug/netcoreapp2.0/userDash2.pdb
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/obj/Debug/netcoreapp2.0/userDash2.csprojResolveAssemblyReference.cache
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/obj/Debug/netcoreapp2.0/userDash2.csproj.CoreCompileInputs.cache
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/obj/Debug/netcoreapp2.0/userDash2.AssemblyInfoInputs.cache
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/obj/Debug/netcoreapp2.0/userDash2.AssemblyInfo.cs
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/obj/Debug/netcoreapp2.0/userDash2.dll
+/Users/wesleycowan/Desktop/DojoAssignments/netCore/userDash2/obj/Debug/netcoreapp2.0/userDash2.pdb
